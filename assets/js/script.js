@@ -45,8 +45,24 @@ function runGame(gameType) {
 }
 
 
-
+/** Gets the operands (the numbers) and the operator (plus, minus, etc.) directly
+ * from the dom and display the correct answer
+ */
 function checkAnswer() {
+    // go to the html document and find the element with 
+    // the id operand1 "document.getElementById"
+    // get the text inside that element "innerText"
+    // convert the text to integer "parseInt"
+let operand1 = parseInt(document.getElementById('operand1').innerText);
+let operand2 = parseInt(document.getElementById('operand2').innerText);
+let operator = document.getElementById("operator").innerText;
+
+if (operator === "+") {
+    return [operand1 + operand2, "addition"];
+} else {
+    alert(`Unimplemented operator ${operator}`);
+    throw `Unimplemented operator ${operator}.Aborting!`;
+}
 
 }
 
